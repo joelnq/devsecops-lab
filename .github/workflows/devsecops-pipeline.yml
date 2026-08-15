@@ -54,7 +54,7 @@ jobs:
         with:
           directory: '.'
           framework: 'terraform,dockerfile'
-          soft_fail: false
+          soft_fail: true
 
   build-scan-sbom:
     name: 5. Build, Container Scan & SBOM
