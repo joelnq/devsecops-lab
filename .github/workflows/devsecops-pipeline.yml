@@ -60,6 +60,9 @@ jobs:
     name: 5. Build, Container Scan & SBOM
     runs-on: ubuntu-latest
     needs: [sast, sca, iac-security]
+    permissions:
+      contents: read
+      packages: write   # <-- Permiso añadido correctamente aquí para corregir el error de GHCR
     outputs:
       image_tag: ${{ steps.meta.outputs.tags }}
       image_digest: ${{ steps.build.outputs.digest }}
